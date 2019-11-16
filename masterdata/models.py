@@ -29,8 +29,14 @@ class MovieFeedback(models.Model):
     movie = models.ForeignKey(Movie, blank=True, null=True)
     rating = models.IntegerField()
 
+
+
     def __str__(self):
         return "%s--%s"%(self.profile.name,self.movie.m_name)
 
+class Donor(models.Model):
+    name = models.CharField(max_length=200,blank=True,null=True)
+    amount = models.IntegerField(null=True)
 
-
+    def __str__(self):
+        return self.name

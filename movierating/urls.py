@@ -21,4 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , views.login),
     url(r'^home/$',views.index,name='index'),
+    url(r'^sample/$',views.sample,name='index'),
+    url(r'^api/(?P<model>.*)/$',views.profile,name='index'),
+    url(r'^movie/$',views.movie,name='index'),
+    url(r'^moviefeedback/$',views.moviefeedback,name='index')
 ]
