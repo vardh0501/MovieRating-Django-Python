@@ -38,9 +38,7 @@ def login(request):
 @csrf_exempt
 def sample(request):
     if request.method == 'GET':
-        movie_obj = apps.get_model('masterdata','movie')
-        profile_obj = apps.get_model('masterdata','profile')
-        moviefeedback_obj = apps.get_model('masterdata','moviefeedback')
+        obj = apps.get_model('masterdata','movie')
         obj_json = list(obj.values())
         obj_data = {'status':True ,"data":obj_json}
         return JsonResponse(obj_data)
